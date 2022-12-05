@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+
 import 'package:ma_carte_de_visite/screens/details.dart';
+import 'package:ma_carte_de_visite/ressources/const_globale.dart';
 
 class VisitCard extends StatelessWidget {
   @override
@@ -31,12 +33,8 @@ class VisitCard extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
-                  "Alphabas",
-                  style: TextStyle(
-                      fontFamily: 'joseFinSans',
-                      fontSize: 30.0,
-                      height: 1.5,
-                      color: Colors.white),
+                  nomVisiteurCarte,
+                  style: styleVisiteurCarte,
                 ),
               ),
             ),
@@ -45,7 +43,7 @@ class VisitCard extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
-                  "Entrepreneur, Developpeur de l'Entreprise AlphabasCPY,enfin de prouver  au monde notre potentiel",
+                  descriptionVisiteurInfo,
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontFamily: 'joseFinSans',

@@ -36,6 +36,25 @@ class Details extends StatelessWidget {
                         fontSize: 20.0),
                   ),
                 ),
+              ),
+              SizedBox(height: 15.0),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Icon(
+                    Icons.mail,
+                    color: Colors.white,
+                    size: 35.0,
+                  ),
+                  SizedBox(width: 15.0),
+                  Text(
+                    "alphabas22@gmail.com",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontFamily: 'joseFinSans',
+                        fontSize: 15.0),
+                  )
+                ],
               )
             ],
           ),
