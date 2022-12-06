@@ -1,64 +1,63 @@
 import 'package:flutter/material.dart';
+import 'package:ma_carte_de_visite/ressources/const_globale.dart';
 
 class Details extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff052555),
+      backgroundColor: Color(backgroundColor),
       appBar: AppBar(
         title: Text('En savoir plus'),
         backgroundColor: Colors.transparent,
         elevation: 0.1,
       ),
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(15.0),
-          child: Column(
+      body: _buildBodyDetail(context),
+    );
+  }
+
+  Widget _buildBodyDetail(BuildContext context) {
+    return Center(
+      child: ListView(
+        shrinkWrap: true,
+        children: <Widget>[
+          Container(
+            alignment: Alignment.center,
+            child: CircleAvatar(
+              radius: 70.0,
+              backgroundImage: AssetImage('assets/alphabas.jpg'),
+            ),
+          ),
+          SizedBox(
+            height: 20.0,
+          ),
+          Card(
+            color: Colors.transparent,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                detailDescriptionInformation,
+                textAlign: TextAlign.center,
+                style: styleDetailDescriptionInfo,
+              ),
+            ),
+          ),
+          SizedBox(height: 15.0),
+          Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              CircleAvatar(
-                radius: 70.0,
-                backgroundImage: AssetImage('assets/alphabas.jpg'),
+              Icon(
+                Icons.mail,
+                color: Colors.white,
+                size: 35.0,
               ),
-              SizedBox(
-                height: 20.0,
-              ),
-              Card(
-                color: Colors.transparent,
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(
-                    "Passionné depuis mon enfance par l'informatique et les nouvelles technologies, je n'ai cessé d'apprendre, Desormais c'esr a  mon tours de partager les connaissance acquises... ",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontFamily: 'joseFinSans',
-                        fontSize: 20.0),
-                  ),
-                ),
-              ),
-              SizedBox(height: 15.0),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Icon(
-                    Icons.mail,
-                    color: Colors.white,
-                    size: 35.0,
-                  ),
-                  SizedBox(width: 15.0),
-                  Text(
-                    "alphabas22@gmail.com",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontFamily: 'joseFinSans',
-                        fontSize: 15.0),
-                  )
-                ],
+              SizedBox(width: 15.0),
+              Text(
+                emailUser,
+                style: styleEmailUser,
               )
             ],
-          ),
-        ),
+          )
+        ],
       ),
     );
   }
