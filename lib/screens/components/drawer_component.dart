@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+// import '../portofolio_screen.dart';
 
 class DrawerComponent extends StatelessWidget {
   @override
@@ -14,8 +17,21 @@ class DrawerComponent extends StatelessWidget {
           Expanded(
             child: ListView(
               children: <Widget>[
-                Text('Accueil'),
-                Text('Portofolio'),
+                ListTile(
+                    title: Text(
+                  'Accueil',
+                  style: GoogleFonts.lato(textStyle: TextStyle(fontSize: 20.0)),
+                )),
+                ListTile(
+                  title: Text(
+                    'Portofolio',
+                    style:
+                        GoogleFonts.lato(textStyle: TextStyle(fontSize: 20.0)),
+                  ),
+                  onTap: () => {
+                    // Navigator.push( context, MaterialPageRoute(builder: (c) => PortofolioScreen()),)
+                  },
+                ),
               ],
             ),
           )

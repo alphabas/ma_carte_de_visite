@@ -1,5 +1,3 @@
-
-
 // ignore_for_file: import_of_legacy_library_into_null_safe
 
 import 'package:flutter/material.dart';
@@ -25,6 +23,8 @@ class PortofolioScreen extends StatelessWidget {
         axis: Axis.horizontal,
         onCarouselTap: (i) {},
         arrowColor: Colors.black,
+        showArrow: true,
+        indicatorType: IndicatorTypes.bar,
       ),
     );
   }

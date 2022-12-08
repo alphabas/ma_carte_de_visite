@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:fab_circular_menu/fab_circular_menu.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:ma_carte_de_visite/screens/components/appbar_component.dart';
 
 import 'package:ma_carte_de_visite/ressources/const_globale.dart';
@@ -12,6 +14,41 @@ class VisitCard extends StatelessWidget {
       backgroundColor: Colors.white,
       drawer: DrawerComponent(),
       body: _buildBodyy(context),
+      floatingActionButton: FabCircularMenu(
+          fabOpenIcon: Icon(
+            FontAwesomeIcons.handshake,
+            color: Colors.blue[600],
+            size: 32.0,
+          ),
+          fabColor: Colors.white,
+          ringDiameter: 210.0,
+          ringWidth: 56.0,
+          ringColor: Colors.white,
+          fabOpenColor: Colors.white,
+          fabMargin: EdgeInsets.all(35.0),
+          children: <Widget>[
+            IconButton(
+              onPressed: () => {},
+              icon: Icon(
+                Icons.web,
+                color: Colors.blue[600],
+              ),
+            ),
+            IconButton(
+              onPressed: () => {},
+              icon: Icon(
+                FontAwesomeIcons.envelope,
+                color: Colors.blue[600],
+              ),
+            ),
+            IconButton(
+              onPressed: () => {},
+              icon: Icon(
+                FontAwesomeIcons.linkedinIn,
+                color: Colors.blue[600],
+              ),
+            ),
+          ]),
     ));
   }
 
