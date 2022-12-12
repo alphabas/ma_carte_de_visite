@@ -5,7 +5,8 @@ import 'package:ma_carte_de_visite/screens/components/appbar_component.dart';
 
 import 'package:ma_carte_de_visite/ressources/const_globale.dart';
 import 'package:ma_carte_de_visite/screens/components/drawer_component.dart';
-import 'package:ma_carte_de_visite/screens/details.dart';
+// import 'package:ma_carte_de_visite/screens/details.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class VisitCard extends StatelessWidget {
   @override
@@ -28,14 +29,14 @@ class VisitCard extends StatelessWidget {
           fabMargin: EdgeInsets.all(35.0),
           children: <Widget>[
             IconButton(
-              onPressed: () => {},
+              onPressed: () => {_launchUrl('http:mfpdsa.org')},
               icon: Icon(
                 Icons.web,
                 color: Colors.blue[600],
               ),
             ),
             IconButton(
-              onPressed: () => {},
+              onPressed: () => {_launchUrl('mailto:alphabas22@gmail.com')},
               icon: Icon(
                 FontAwesomeIcons.envelope,
                 color: Colors.blue[600],
@@ -51,6 +52,23 @@ class VisitCard extends StatelessWidget {
           ]),
     ));
   }
+
+  Future<void> _launchUrl(String _url) async {
+    if (!await launchUrl(_url as Uri)) {
+      throw 'Could not launch $_url';
+    } else {
+      throw 'erreur data';
+    }
+  }
+
+  // void _launchUrl(String url) async {
+  //   if (await canLaunch(url)) {
+  //     await launch(url);
+  //     print('is connected');
+  //   } else {
+  //     throw 'Erreur';
+  //   }
+  // }
 
   Widget _buildBodyy(BuildContext context) {
     return CustomScrollView(

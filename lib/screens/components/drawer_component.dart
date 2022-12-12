@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:ma_carte_de_visite/screens/visit_card_screen.dart';
 
 // import '../portofolio_screen.dart';
 
@@ -18,10 +19,16 @@ class DrawerComponent extends StatelessWidget {
             child: ListView(
               children: <Widget>[
                 ListTile(
-                    title: Text(
-                  'Accueil',
-                  style: GoogleFonts.lato(textStyle: TextStyle(fontSize: 20.0)),
-                )),
+                  title: Text(
+                    'Accueil',
+                    style:
+                        GoogleFonts.lato(textStyle: TextStyle(fontSize: 20.0)),
+                  ),
+                  onTap: () => {
+                    Navigator.pushReplacement(
+                        context, MaterialPageRoute(builder: (c) => VisitCard()))
+                  },
+                ),
                 ListTile(
                   title: Text(
                     'Portofolio',
