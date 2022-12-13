@@ -29,7 +29,7 @@ class VisitCard extends StatelessWidget {
           fabMargin: EdgeInsets.all(35.0),
           children: <Widget>[
             IconButton(
-              onPressed: () => {_launchUrl('http:mfpdsa.org')},
+              onPressed: () => {_launchUrl('http://mfpdsa.org')},
               icon: Icon(
                 Icons.web,
                 color: Colors.blue[600],
@@ -55,7 +55,8 @@ class VisitCard extends StatelessWidget {
 
   Future<void> _launchUrl(String _url) async {
     if (!await launchUrl(_url as Uri)) {
-      throw 'Could not launch $_url';
+      // throw 'Could not launch $_url';
+      await launchUrl(_url as Uri);
     } else {
       throw 'erreur data';
     }

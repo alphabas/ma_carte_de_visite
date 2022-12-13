@@ -13,15 +13,18 @@ class SliverAppBarComponent extends StatelessWidget {
       expandedHeight: 200.0,
       flexibleSpace:
           Row(mainAxisAlignment: MainAxisAlignment.end, children: <Widget>[
-        Container(
-            margin: EdgeInsets.all(10),
-            alignment: Alignment.centerRight,
-            child: Text(
-              'Alphabas, Entreprenneur',
-              style: GoogleFonts.rubik(color: Colors.white, fontSize: 17.0),
-            )),
-        Padding(
-          padding: const EdgeInsets.only(left: 5.0),
+        Flexible(
+          fit: FlexFit.loose,
+          child: Container(
+              // margin: EdgeInsets.all(10),
+              alignment: Alignment.centerLeft,
+              child: Text(
+                'Alphabas, Entreprenneur',
+                style: GoogleFonts.rubik(color: Colors.white, fontSize: 17.0),
+              )),
+        ),
+        Flexible(
+          fit: FlexFit.loose,
           child: Image.asset('assets/alphabas.jpg'),
         )
       ]),

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ma_carte_de_visite/screens/visit_card_screen.dart';
 
-// import '../portofolio_screen.dart';
+import '../portofolio_screen.dart';
 
 class DrawerComponent extends StatelessWidget {
   @override
@@ -31,12 +31,28 @@ class DrawerComponent extends StatelessWidget {
                 ),
                 ListTile(
                   title: Text(
+                    'About us',
+                    style:
+                        GoogleFonts.lato(textStyle: TextStyle(fontSize: 20.0)),
+                  ),
+                  onTap: () => {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (c) => PortofolioScreen()),
+                    )
+                  },
+                ),
+                ListTile(
+                  title: Text(
                     'Portofolio',
                     style:
                         GoogleFonts.lato(textStyle: TextStyle(fontSize: 20.0)),
                   ),
                   onTap: () => {
-                    // Navigator.push( context, MaterialPageRoute(builder: (c) => PortofolioScreen()),)
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (c) => PortofolioScreen()),
+                    )
                   },
                 ),
               ],
